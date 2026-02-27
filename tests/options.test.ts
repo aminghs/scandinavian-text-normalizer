@@ -1,5 +1,9 @@
 import { describe, it, expect } from "vitest";
-import { getNormalizeOptions, getSluggifyOptions, getExpandOptions } from "../src/options";
+import {
+  getNormalizeOptions,
+  getSluggifyOptions,
+  getExpandOptions,
+} from "../src/options";
 
 describe("options", () => {
   it("getNormalizeOptions returns defaults", () => {

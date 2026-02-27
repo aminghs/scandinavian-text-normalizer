@@ -13,7 +13,8 @@ import { getNormalizeOptions } from "./options.js";
 
 // Unicode categories: Mn = Nonspacing_Mark, Mc = Spacing_Mark, Me = Enclosing_Mark
 // eslint-disable-next-line no-misleading-character-class -- intentional Unicode ranges
-const COMBINING_MARKS_REGEX = /[\u0300-\u036f\u1ab0-\u1aff\u1dc0-\u1dff\u20d0-\u20ff\ufe20-\ufe2f]/g;
+const COMBINING_MARKS_REGEX =
+  /[\u0300-\u036f\u1ab0-\u1aff\u1dc0-\u1dff\u20d0-\u20ff\ufe20-\ufe2f]/g;
 
 // Emoji and symbols (common ranges); keep it conservative to avoid removing valid letters
 const EMOJI_REGEX =
@@ -54,7 +55,10 @@ function transliterateScandinavian(
         .replace(/\u00e5/g, "aa");
       break;
     case "a_o_a":
-      out = out.replace(/\u00e6/gi, "a").replace(/\u00f8/gi, "o").replace(/\u00e5/gi, "a");
+      out = out
+        .replace(/\u00e6/gi, "a")
+        .replace(/\u00f8/gi, "o")
+        .replace(/\u00e5/gi, "a");
       break;
     case "keep":
       break;
@@ -116,11 +120,7 @@ export function normalize(text: string, options?: NormalizeOptions): string {
   if (opts.preserveScandinavianLetters) {
     s = preserveScandinavianPlaceholders(s);
   } else {
-    s = transliterateScandinavian(
-      s,
-      opts.transliteration,
-      false
-    );
+    s = transliterateScandinavian(s, opts.transliteration, false);
   }
 
   // Unicode NFKD: canonical decomposition (é → e + combining acute)

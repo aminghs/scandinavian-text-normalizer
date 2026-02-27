@@ -15,7 +15,9 @@ describe("isEquivalent", () => {
   });
 
   it("Østberg and Ostberg equivalent with ae_oe_aa", () => {
-    expect(isEquivalent("Østberg", "Oestberg", { transliteration: "ae_oe_aa" })).toBe(true);
+    expect(isEquivalent("Østberg", "Oestberg", { transliteration: "ae_oe_aa" })).toBe(
+      true
+    );
   });
 
   it("Ålesund and Aalesund equivalent", () => {

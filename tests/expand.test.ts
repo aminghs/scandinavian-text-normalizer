@@ -27,7 +27,11 @@ describe("expand", () => {
 
   it("expand Håkon includes Haakon and Hakon-like variants", () => {
     const r = expand("Håkon", { transliteration: "ae_oe_aa" });
-    expect(r.some((x) => x.toLowerCase().includes("haakon") || x.toLowerCase().includes("hakon"))).toBe(true);
+    expect(
+      r.some(
+        (x) => x.toLowerCase().includes("haakon") || x.toLowerCase().includes("hakon")
+      )
+    ).toBe(true);
   });
 
   it("expand is deterministic", () => {

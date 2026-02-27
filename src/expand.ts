@@ -42,15 +42,33 @@ export function expand(text: string, options?: ExpandOptions): string[] {
 
   if (trans === "ae_oe_aa") {
     variants.push(
-      lower.replace(/\u00e6/g, "ae").replace(/\u00f8/g, "oe").replace(/\u00e5/g, "aa"),
-      lower.replace(/\u00e6/g, "a").replace(/\u00f8/g, "o").replace(/\u00e5/g, "a"),
-      text.replace(/\u00e6/gi, "ae").replace(/\u00f8/gi, "oe").replace(/\u00e5/gi, "aa"),
-      text.replace(/\u00e6/gi, "a").replace(/\u00f8/gi, "o").replace(/\u00e5/gi, "a")
+      lower
+        .replace(/\u00e6/g, "ae")
+        .replace(/\u00f8/g, "oe")
+        .replace(/\u00e5/g, "aa"),
+      lower
+        .replace(/\u00e6/g, "a")
+        .replace(/\u00f8/g, "o")
+        .replace(/\u00e5/g, "a"),
+      text
+        .replace(/\u00e6/gi, "ae")
+        .replace(/\u00f8/gi, "oe")
+        .replace(/\u00e5/gi, "aa"),
+      text
+        .replace(/\u00e6/gi, "a")
+        .replace(/\u00f8/gi, "o")
+        .replace(/\u00e5/gi, "a")
     );
   } else if (trans === "a_o_a") {
     variants.push(
-      lower.replace(/\u00e6/g, "a").replace(/\u00f8/g, "o").replace(/\u00e5/g, "a"),
-      text.replace(/\u00e6/gi, "a").replace(/\u00f8/gi, "o").replace(/\u00e5/gi, "a")
+      lower
+        .replace(/\u00e6/g, "a")
+        .replace(/\u00f8/g, "o")
+        .replace(/\u00e5/g, "a"),
+      text
+        .replace(/\u00e6/gi, "a")
+        .replace(/\u00f8/gi, "o")
+        .replace(/\u00e5/gi, "a")
     );
   }
 

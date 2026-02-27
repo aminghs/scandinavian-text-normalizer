@@ -82,8 +82,12 @@ describe("normalize", () => {
   });
 
   it("transliteration keep preserves æøå", () => {
-    expect(normalize("æøå", { transliteration: "keep", preserveScandinavianLetters: true })).toBe("æøå");
-    expect(normalize("ÆØÅ", { transliteration: "keep", preserveScandinavianLetters: true })).toBe("ÆØÅ");
+    expect(
+      normalize("æøå", { transliteration: "keep", preserveScandinavianLetters: true })
+    ).toBe("æøå");
+    expect(
+      normalize("ÆØÅ", { transliteration: "keep", preserveScandinavianLetters: true })
+    ).toBe("ÆØÅ");
   });
 
   it("is deterministic", () => {

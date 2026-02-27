@@ -54,11 +54,11 @@ const DEFAULT_NORMALIZE_OPTIONS: Required<
   keepDigits: true,
 };
 
-export function getNormalizeOptions(options?: NormalizeOptions): Required<NormalizeOptions> {
+export function getNormalizeOptions(
+  options?: NormalizeOptions
+): Required<NormalizeOptions> {
   const opts = { ...DEFAULT_NORMALIZE_OPTIONS, ...options };
-  const preserve =
-    opts.preserveScandinavianLetters ??
-    (opts.mode === "strict");
+  const preserve = opts.preserveScandinavianLetters ?? opts.mode === "strict";
   return {
     ...opts,
     preserveScandinavianLetters: preserve,
@@ -78,9 +78,7 @@ const DEFAULT_SLUGGIFY_OPTIONS: Required<
 
 export function getSluggifyOptions(options?: SluggifyOptions): Required<SluggifyOptions> {
   const opts = { ...DEFAULT_SLUGGIFY_OPTIONS, ...options };
-  const preserve =
-    opts.preserveScandinavianLetters ??
-    (opts.mode === "strict");
+  const preserve = opts.preserveScandinavianLetters ?? opts.mode === "strict";
   return {
     ...opts,
     preserveScandinavianLetters: preserve,
@@ -100,9 +98,7 @@ const DEFAULT_EXPAND_OPTIONS: Required<
 
 export function getExpandOptions(options?: ExpandOptions): Required<ExpandOptions> {
   const opts = { ...DEFAULT_EXPAND_OPTIONS, ...options };
-  const preserve =
-    opts.preserveScandinavianLetters ??
-    (opts.mode === "strict");
+  const preserve = opts.preserveScandinavianLetters ?? opts.mode === "strict";
   return {
     ...opts,
     preserveScandinavianLetters: preserve,
@@ -117,8 +113,7 @@ const DEFAULT_SORT_KEY_OPTIONS: SortKeyOptions = {
 
 export function getSortKeyOptions(options?: SortKeyOptions): Required<SortKeyOptions> {
   const opts = { ...DEFAULT_SORT_KEY_OPTIONS, ...options };
-  const preserve =
-    opts.preserveScandinavianLetters ?? false;
+  const preserve = opts.preserveScandinavianLetters ?? false;
   return {
     ...opts,
     preserveScandinavianLetters: preserve,

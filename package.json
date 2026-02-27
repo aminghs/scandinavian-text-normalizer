@@ -1,6 +1,6 @@
 {
   "name": "scandinavian-text-normalizer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Zero-dependency TypeScript library for Scandinavian/Norwegian text normalization with deterministic, production-safe output",
   "license": "MIT",
   "author": "",

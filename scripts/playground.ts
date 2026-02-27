@@ -6,13 +6,7 @@
  */
 
 // When run from repo: use source. After build, you can use "scandinavian-text-normalizer"
-import {
-  normalize,
-  slugify,
-  expand,
-  sortKey,
-  isEquivalent,
-} from "../src/index.js";
+import { normalize, slugify, expand, sortKey, isEquivalent } from "../src/index.js";
 
 const examples = [
   "Håkon",
@@ -46,6 +40,9 @@ console.log("  ", names, "→ sorted:", sorted);
 
 console.log("\nisEquivalent:");
 console.log("  isEquivalent('Håkon', 'Haakon') →", isEquivalent("Håkon", "Haakon"));
-console.log("  isEquivalent('Ålesund', 'Aalesund') →", isEquivalent("Ålesund", "Aalesund"));
+console.log(
+  "  isEquivalent('Ålesund', 'Aalesund') →",
+  isEquivalent("Ålesund", "Aalesund")
+);
 
 console.log("\nDone.");
