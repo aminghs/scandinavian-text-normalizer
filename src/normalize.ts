@@ -13,8 +13,8 @@ import { getNormalizeOptions } from "./options.js";
 
 // Unicode categories: Mn = Nonspacing_Mark, Mc = Spacing_Mark, Me = Enclosing_Mark
 // eslint-disable-next-line no-misleading-character-class -- intentional Unicode ranges
-const COMBINING_MARKS_REGEX =
-  /[\u0300-\u036f\u1ab0-\u1aff\u1dc0-\u1dff\u20d0-\u20ff\ufe20-\ufe2f]/g;
+// Match any combining mark (Unicode category M) - avoids "combined character in character class" error
+const COMBINING_MARKS_REGEX = /\p{M}/gu;
 
 // Emoji and symbols (common ranges); keep it conservative to avoid removing valid letters
 const EMOJI_REGEX =
